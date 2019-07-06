@@ -1,0 +1,14 @@
+{
+  "name": "algostrata",
+  "version": "1.0.0",
+  "description": "calculation library for algostrata",
+  "main": "index.js",
+  "scripts": {
+    "example": "node example"
+  },
+  "author": "Algostrata",
+  "license": "MIT",
+  "files": [
+    "index.js"
+  ]
+}
