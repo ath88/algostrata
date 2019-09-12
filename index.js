@@ -17,6 +17,26 @@ function differenceAfterYear(initialValue, returnPerYear, baseCostPerYear, newCo
   return initialValue * differenceInReturnsAtYear;
 }
 
+// function differenceAfterYearWithFirstYear
+// Calculates the difference in accumulated value based on identical returns, but difference in costs, where the first year can have a different cost
+//
+// Arguments:
+// initialValue: Number
+// returnPerYear: Number
+// baseCostPerYear: Number
+// costFirstYear: Number
+// newCostPerYear: Number
+// atYear: Number
+
+function differenceAfterYearWithFirstYear(initialValue, returnPerYear, baseCostPerYear, newCostFirstYear, newCostPerYear, atYear) {
+  const baseReturns = (1 + returnPerYear - baseCostPerYear);
+  const newReturnsFirstYear = (1 + returnPerYear - newCostFirstYear);
+  const newReturns = (1 + returnPerYear - newCostPerYear);
+
+  const differenceInReturnsAtYear = newReturnsFirstYear + Math.pow(newReturns, atYear - 1) - Math.pow(baseReturns, atYear);
+
+  return initialValue * differenceInReturnsAtYear;
+}
 
 // function valueAtYearWithStandardDeviation
 // Calculates the total value at a year, based on return and standard deviation.
@@ -37,4 +57,4 @@ function valueAtYearWithStandardDeviation(initialValue, returnPerYear, numberOfS
   return initialValue * returnAtYear;
 }
 
-module.exports = { differenceAfterYear, valueAtYearWithStandardDeviation };
+module.exports = { differenceAfterYear, differenceAfterYearWithFirstYear, valueAtYearWithStandardDeviation };
