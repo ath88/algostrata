@@ -1,6 +1,6 @@
 {
   "name": "algostrata",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "calculation library for algostrata",
   "main": "build/index.js",
   "scripts": {
